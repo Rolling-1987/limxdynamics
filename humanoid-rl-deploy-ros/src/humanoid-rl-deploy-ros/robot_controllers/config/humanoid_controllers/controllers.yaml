@@ -1,0 +1,6 @@
+StandHumanoidController:
+  type: controller/StandHumanoidController
+DampingHumanoidController:
+  type: controller/DampingHumanoidController
+MimicHumanoidController:
+  type: controller/MimicHumanoidController

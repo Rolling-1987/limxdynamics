@@ -1,0 +1,15 @@
+<launch>
+  <!-- Pass the ROBOT_TYPE environment variable to ROS parameters -->
+  <param name="robot_type" value="$(env ROBOT_TYPE)" />
+  <arg name="config_path" default="$(find robot_controllers)/config/humanoid_controllers/$(env ROBOT_TYPE)/MimicHumanoidController/" />
+
+  <param name="policyFile" value="$(arg config_path)/policy/default/policy.onnx"/>
+  <param name="encoderFile1" value="$(arg config_path)/policy/default/lin_encoder.onnx"/>
+  <param name="encoderFile2" value="$(arg config_path)/policy/default/priv_encoder.onnx"/>
+  <rosparam file="$(find robot_controllers)/config/humanoid_controllers/controllers.yaml" command="load"/>
+  <rosparam file="$(find robot_controllers)/config/humanoid_controllers/$(env ROBOT_TYPE)/jointController/joint_params.yaml" command="load"/>
+  <rosparam file="$(arg config_path)/mimic_param.yaml" command="load"/>
+  <rosparam file="$(find robot_hw)/config/$(env ROBOT_TYPE).yaml" command="load"/>
+  <rosparam file="$(find robot_hw)/config/joystick.yaml" command="load"/>
+  <node name="humanoid_hw" pkg="robot_hw" type="humanoid_node" respawn="false" clear_params="true" required="true" output="screen" args="127.0.0.1" />
+</launch>

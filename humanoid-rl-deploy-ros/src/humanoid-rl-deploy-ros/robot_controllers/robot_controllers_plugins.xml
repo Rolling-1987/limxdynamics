@@ -1,0 +1,20 @@
+<library path="lib/librobot_controllers">
+    <class name="controller/DampingHumanoidController" type="controller::DampingHumanoidController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            The humanoid controller.
+        </description>
+    </class>
+    <class name="controller/StandHumanoidController" type="controller::StandHumanoidController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            The humanoid controller.
+        </description>
+    </class>
+    <class name="controller/MimicHumanoidController" type="controller::MimicHumanoidController"
+           base_class_type="controller_interface::ControllerBase">
+        <description>
+            The humanoid controller.
+        </description>
+    </class>
+</library>
