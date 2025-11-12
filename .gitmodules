@@ -1,3 +1,0 @@
-[submodule "humanoid-mujoco-sim/limxsdk-lowlevel"]
-	path = humanoid-mujoco-sim/limxsdk-lowlevel
-	url = https://github.com/Rolling-1987/limxsdk-lowlevel.git
